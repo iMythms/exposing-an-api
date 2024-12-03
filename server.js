@@ -4,8 +4,6 @@ const path = require('path')
 require('dotenv').config()
 
 const app = express()
-
-// API_KEY='http://api.openweathermap.org/data/2.5/weather' Replace this in your .env
 const API = process.env.API_KEY
 const PORT = process.env.PORT
 
