@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/globals.css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Weather Information</title>
+	</head>
+
+	<body class="bg-slate-100 h-dvh">
+		<section class="container mx-auto">
+			<div class="flex items-center justify-center h-dvh">
+				<div class="bg-white w-[50%] p-16 rounded-3xl flex flex-col gap-5">
+					<a href="/" class="hover:underline"> < Back to Home</a>
+					<h1 class="font-semibold text-4xl">Weather Information</h1>
+
+					<div class="flex flex-col gap-2">
+						<h2 class="text-lg font-medium mb-1">City</h2>
+						<p
+							class="bg-[#F7FBFF] border border-[#D4D7E3] rounded-lg max-h-10 px-2 py-3 flex items-center"
+						>
+							<%= data.name %>
+						</p>
+					</div>
+					<div class="flex flex-col gap-2">
+						<h2 class="text-lg font-medium mb-1">Temperature</h2>
+						<p
+							class="bg-[#F7FBFF] border border-[#D4D7E3] rounded-lg max-h-10 px-2 py-3 flex items-center"
+						>
+							<%= ((data.main.temp - 32) * 5 / 9).toFixed(2) %> °C
+						</p>
+					</div>
+					<div class="flex flex-col gap-2">
+						<h2 class="text-lg font-medium mb-1">Description</h2>
+						<p
+							class="bg-[#F7FBFF] border border-[#D4D7E3] rounded-lg max-h-10 px-2 py-3 flex items-center"
+						>
+							<%= data.weather[0].description.split(' ').map(word =>
+							word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
